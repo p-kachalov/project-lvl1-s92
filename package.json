@@ -1,9 +1,10 @@
 {
   "name": "brain-games-by-pavel-k",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "scripts": {
     "babel-node": "babel-node",
