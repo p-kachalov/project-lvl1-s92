@@ -1,0 +1,17 @@
+plugins:
+  - import
+
+env:
+  node: true
+
+parser: babel-eslint
+
+parserOption:
+  ecmaVersion: 2015
+  sourceType: module
+
+extends:
+  - 'airbnb-base'
+
+rules:
+  no-console: 0
