@@ -9,7 +9,7 @@
     "babel-node": "babel-node",
     "build": "NODE_ENV=prodution babel src --out-dir dist --source-maps inline",
     "prepublish": "npm run build",
-    "eslint": "./node_modules/.bin/eslint"
+    "eslint": "eslint"
   },
   "repository": {
     "type": "git",
