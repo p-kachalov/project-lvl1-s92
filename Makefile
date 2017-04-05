@@ -10,9 +10,6 @@ start-even:
 start-calc:
 		npm run babel-node -- src/bin/brain-calc.js
 
-test-puzzle:
-		npm run babel-node -- src/puzzle.js
-
 publish:
 	npm publish
 
