@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import { puzzleQuestion, puzzleAnswer } from './puzzle';
 import EvenPuzzle from './games/brain-even';
 import CalcPuzzle from './games/brain-calc';
+import GcdPuzzle from './games/brain-gcd';
 
 export const showGreeting = (gameConditions) => {
   console.log('Welcome to the Brain Games!');
@@ -21,6 +22,8 @@ const getPuzzle = (gameType) => {
       return EvenPuzzle();
     case 'calc':
       return CalcPuzzle();
+    case 'gcd':
+      return GcdPuzzle();
     default:
       throw new Error(`Unknown type of game '${gameType}'`);
   }
