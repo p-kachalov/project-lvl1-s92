@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-import { showGreeting, playGame } from '..';
+import { showGreeting, getUsername, playGame } from '..';
 
 const gameConditions = 'Answer "yes" if number even otherwise answer "no".';
-const username = showGreeting(gameConditions);
+showGreeting(gameConditions);
+const username = getUsername();
 const gameType = 'even';
 const attemptsCount = 3;
 playGame(username, gameType, attemptsCount);
