@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { showGreeting, getUsername } from '..';
+import play from '..';
 
-showGreeting();
-getUsername();
+play();

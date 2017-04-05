@@ -1,4 +1,3 @@
-import { newPuzzle } from '../puzzle';
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
@@ -29,11 +28,23 @@ const calculateAnswer = (num1, num2, oper) => {
   }
 };
 
-export default () => {
+const getPuzzle = () => {
   const num1 = getRandomInt(1, 10);
   const num2 = getRandomInt(1, 10);
   const oper = getRandomOperator();
   const question = `${num1} ${oper} ${num2}`;
+  console.log(`Question: ${question}`);
   const answer = String(calculateAnswer(num1, num2, oper));
-  return newPuzzle(question, answer);
+  return answer;
+};
+
+export default (message) => {
+  switch (message) {
+    case 'conditions':
+      return 'What is the result of the expression?';
+    case 'puzzle':
+      return getPuzzle();
+    default:
+      throw new Error(`Unknown message '${message}'`);
+  }
 };

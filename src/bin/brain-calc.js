@@ -1,9 +1,5 @@
 #!/usr/bin/env node
-import { showGreeting, getUsername, playGame } from '..';
+import play from '..';
+import game from '../games/brain-calc';
 
-const gameConditions = 'What is the result of the expression?';
-showGreeting(gameConditions);
-const username = getUsername();
-const gameType = 'calc';
-const attemptsCount = 3;
-playGame(username, gameType, attemptsCount);
+play(game);
