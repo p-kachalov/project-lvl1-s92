@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-import showGreeting from '..';
-import playBrainEven from '../play-brain-even';
+import { showGreeting, playGame } from '..';
 
-console.log('Welcome to the Brain Games!');
-console.log('Answer "yes" if number even otherwise answer "no".\n');
-const username = showGreeting();
+const gameConditions = 'Answer "yes" if number even otherwise answer "no".';
+const username = showGreeting(gameConditions);
+const gameType = 'even';
 const attemptsCount = 3;
-playBrainEven(username, attemptsCount);
+playGame(username, gameType, attemptsCount);
