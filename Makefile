@@ -7,6 +7,9 @@ start:
 start-even:
 		npm run babel-node -- src/bin/brain-even.js
 
+start-calc:
+		npm run babel-node -- src/bin/brain-calc.js
+
 test-puzzle:
 		npm run babel-node -- src/puzzle.js
 
