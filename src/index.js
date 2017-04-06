@@ -41,28 +41,3 @@ export default (conditions, puzzle) => {
 
   iter(attemptsCount);
 };
-
-/*
-if (attemptsCount === 0) {
-  console.log(`Congratulations, ${username}!`);
-  return false;
-}
-
-const playRound = (game, roundsCount, username) => {
-  if (roundsCount === 0) {
-    console.log(`Congratulations, ${username}!`);
-    return;
-  }
-
-  const rightAnswer = game('puzzle');
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (rightAnswer === userAnswer) {
-    console.log('Correct!');
-    playRound(game, roundsCount - 1, username);
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-    console.log(`Let's try again, ${username}!`);
-  }
-};
-
-*/
