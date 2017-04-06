@@ -28,23 +28,16 @@ const calculateAnswer = (num1, num2, oper) => {
   }
 };
 
-const getPuzzle = () => {
+const puzzle = (play) => {
   const num1 = getRandomInt(1, 10);
   const num2 = getRandomInt(1, 10);
   const oper = getRandomOperator();
   const question = `${num1} ${oper} ${num2}`;
-  console.log(`Question: ${question}`);
   const answer = String(calculateAnswer(num1, num2, oper));
-  return answer;
+  return play(question, answer);
 };
 
-export default (message) => {
-  switch (message) {
-    case 'conditions':
-      return 'What is the result of the expression?';
-    case 'puzzle':
-      return getPuzzle();
-    default:
-      throw new Error(`Unknown message '${message}'`);
-  }
+export default (flow) => {
+  const conditions = 'What is the result of the expression?';
+  flow(conditions, puzzle);
 };

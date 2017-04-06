@@ -22,20 +22,13 @@ const balanceStr = (str) => {
   return (balanceStr(balanceNumbers(sortedStr)));
 };
 
-const getPuzzle = () => {
+const puzzle = (play) => {
   const question = String(getRandomInt(111, 9999));
-  console.log(`Question: ${question}`);
   const answer = balanceStr(question);
-  return answer;
+  return play(question, answer);
 };
 
-export default (message) => {
-  switch (message) {
-    case 'conditions':
-      return 'Balance the given number.';
-    case 'puzzle':
-      return getPuzzle();
-    default:
-      throw new Error(`Unknown message '${message}'`);
-  }
+export default (flow) => {
+  const conditions = 'Balance the given number.';
+  flow(conditions, puzzle);
 };

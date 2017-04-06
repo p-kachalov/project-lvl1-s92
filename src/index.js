@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const showGreeting = (game) => {
+const showGreeting = (conditions) => {
   console.log('Welcome to the Brain Games!');
-  if (game) console.log(game('conditions'));
+  if (conditions) console.log(conditions);
 };
 
 const getUsername = () => {
@@ -10,6 +10,43 @@ const getUsername = () => {
   console.log(`Hello, ${username}!\n`);
   return username;
 };
+
+
+export default (conditions, puzzle) => {
+  showGreeting(conditions);
+  const username = getUsername();
+  const attemptsCount = 3;
+
+  const gameRound = (question, answer) => {
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer === answer) {
+      console.log('Correct!');
+      return true;
+    }
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+    console.log(`Let's try again, ${username}!`);
+    return false;
+  };
+
+  const iter = (counter) => {
+    if (counter === 0) {
+      console.log(`Congratulations, ${username}!`);
+      return;
+    }
+    const userResult = puzzle(gameRound);
+    if (!userResult) return;
+    iter(counter - 1);
+  };
+
+  iter(attemptsCount);
+};
+
+/*
+if (attemptsCount === 0) {
+  console.log(`Congratulations, ${username}!`);
+  return false;
+}
 
 const playRound = (game, roundsCount, username) => {
   if (roundsCount === 0) {
@@ -28,12 +65,4 @@ const playRound = (game, roundsCount, username) => {
   }
 };
 
-export default (game) => {
-  showGreeting(game);
-  const username = getUsername();
-
-  if (game) {
-    const roundsCount = 3;
-    playRound(game, roundsCount, username);
-  }
-};
+*/

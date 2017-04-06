@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import play from '..';
+import flow from '..';
 
-play();
+flow();

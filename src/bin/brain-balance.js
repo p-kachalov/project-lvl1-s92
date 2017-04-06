@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import play from '..';
+import flow from '..';
 import game from '../games/brain-balance';
 
-play(game);
+game(flow);
