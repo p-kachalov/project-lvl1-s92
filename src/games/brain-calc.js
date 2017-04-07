@@ -1,6 +1,6 @@
 import flow from '../';
 import getRandomInt from '../random-int';
-import { cons, car, cdr } from '../pairs';
+import { cons, car, cdr } from '../../node_modules/hexlet-pairs';
 
 const getRandomOperation = (num1, num2) => {
   const randomNum = getRandomInt(0, 3);

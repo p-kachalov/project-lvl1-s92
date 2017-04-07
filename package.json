@@ -1,6 +1,6 @@
 {
   "name": "brain-games-by-pavel-k",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/p-kachalov/project-lvl1-s92#readme",
   "dependencies": {
+    "hexlet-pairs": "^0.1.4",
     "readline-sync": "^1.4.7"
   },
   "devDependencies": {
