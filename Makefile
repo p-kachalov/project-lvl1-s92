@@ -16,6 +16,9 @@ start-gcd:
 start-balance:
 		npm run babel-node -- src/bin/balance.js
 
+start-progression:
+		npm run babel-node -- src/bin/progression.js
+
 publish:
 	npm publish
 
