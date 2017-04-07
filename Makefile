@@ -19,6 +19,9 @@ start-balance:
 start-progression:
 		npm run babel-node -- src/bin/progression.js
 
+start-prime:
+		npm run babel-node -- src/bin/prime.js
+
 publish:
 	npm publish
 
