@@ -1,40 +1,19 @@
 import flow from '../';
 import getRandomInt from '../random-int';
+import { cons, car, cdr } from '../pairs';
 
-const getRandomOperation = () => {
+const getRandomOperation = (num1, num2) => {
   const randomNum = getRandomInt(0, 3);
-  switch (randomNum) {
-    case 0:
-      return '+';
-    case 1:
-      return '-';
-    case 2:
-      return '*';
-    default:
-      throw new Error(`Impossible number '${randomNum}'`);
-  }
-};
-
-const calculateAnswer = (num1, num2, oper) => {
-  switch (oper) {
-    case '+':
-      return num1 + num2;
-    case '-':
-      return num1 - num2;
-    case '*':
-      return num1 * num2;
-    default:
-      throw new Error(`Unknown operator '${oper}'`);
-  }
+  if (randomNum === 0) return cons(`${num1} + ${num2}`, num1 + num2);
+  if (randomNum === 1) return cons(`${num1} - ${num2}`, num1 - num2);
+  return cons(`${num1} * ${num2}`, num1 * num2);
 };
 
 const puzzle = (play) => {
   const num1 = getRandomInt(1, 10);
   const num2 = getRandomInt(1, 10);
-  const oper = getRandomOperation();
-  const answer = String(calculateAnswer(num1, num2, oper));
-  const question = `${num1} ${oper} ${num2}`;
-  return play(question, answer);
+  const randomOperation = getRandomOperation(num1, num2);
+  return play(car(randomOperation), cdr(randomOperation));
 };
 
 export default () => {
