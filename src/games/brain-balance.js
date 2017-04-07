@@ -1,5 +1,5 @@
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+import flow from '../';
+import getRandomInt from '../random-int';
 
 const sortString = str => str.split('').sort().join('');
 
@@ -28,7 +28,7 @@ const puzzle = (play) => {
   return play(question, answer);
 };
 
-export default (flow) => {
+export default () => {
   const conditions = 'Balance the given number.';
   flow(conditions, puzzle);
 };

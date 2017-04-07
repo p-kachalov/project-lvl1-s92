@@ -1,5 +1,6 @@
+import flow from '../';
+import getRandomInt from '../random-int';
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const puzzle = (play) => {
   const question = String(getRandomInt(1, 100));
@@ -7,7 +8,7 @@ const puzzle = (play) => {
   return play(question, answer);
 };
 
-export default (flow) => {
+export default () => {
   const conditions = 'Answer "yes" if number even otherwise answer "no".';
   flow(conditions, puzzle);
 };

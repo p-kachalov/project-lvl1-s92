@@ -1,5 +1,6 @@
+import flow from '../';
+import getRandomInt from '../random-int';
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const gcd = (num1, num2) => (num2 === 0 ? num1 : gcd(num2, num1 % num2));
 
 const puzzle = (play) => {
@@ -10,7 +11,7 @@ const puzzle = (play) => {
   return play(question, answer);
 };
 
-export default (flow) => {
+export default () => {
   const conditions = 'Find the greatest common divisor of given numbers.';
   flow(conditions, puzzle);
 };

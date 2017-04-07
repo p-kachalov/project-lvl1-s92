@@ -1,7 +1,7 @@
+import flow from '../';
+import getRandomInt from '../random-int';
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-const getRandomOperator = () => {
+const getRandomOperation = () => {
   const randomNum = getRandomInt(0, 3);
   switch (randomNum) {
     case 0:
@@ -31,13 +31,13 @@ const calculateAnswer = (num1, num2, oper) => {
 const puzzle = (play) => {
   const num1 = getRandomInt(1, 10);
   const num2 = getRandomInt(1, 10);
-  const oper = getRandomOperator();
-  const question = `${num1} ${oper} ${num2}`;
+  const oper = getRandomOperation();
   const answer = String(calculateAnswer(num1, num2, oper));
+  const question = `${num1} ${oper} ${num2}`;
   return play(question, answer);
 };
 
-export default (flow) => {
+export default () => {
   const conditions = 'What is the result of the expression?';
   flow(conditions, puzzle);
 };
