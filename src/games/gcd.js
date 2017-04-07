@@ -12,6 +12,6 @@ const getPuzzle = () => {
 };
 
 export default () => {
-  const conditions = 'Find the greatest common divisor of given numbers.';
-  flow(conditions, getPuzzle);
+  const manual = 'Find the greatest common divisor of given numbers.';
+  flow(manual, getPuzzle);
 };

@@ -10,6 +10,6 @@ const getPuzzle = () => {
 };
 
 export default () => {
-  const conditions = 'Answer "yes" if number even otherwise answer "no".';
-  flow(conditions, getPuzzle);
+  const manual = 'Answer "yes" if number even otherwise answer "no".';
+  flow(manual, getPuzzle);
 };

@@ -30,6 +30,6 @@ const getPuzzle = () => {
 };
 
 export default () => {
-  const conditions = 'Balance the given number.';
-  flow(conditions, getPuzzle);
+  const manual = 'Balance the given number.';
+  flow(manual, getPuzzle);
 };

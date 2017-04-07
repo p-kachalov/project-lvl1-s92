@@ -20,9 +20,9 @@ const playGame = (username, getPuzzle) => {
   return iter(attemptsCount);
 };
 
-export default (conditions, getPuzzle) => {
+export default (manual, getPuzzle) => {
   console.log('Welcome to the Brain Games!');
-  console.log(conditions);
+  console.log(manual);
 
   const username = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${username}!\n`);

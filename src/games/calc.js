@@ -13,6 +13,6 @@ const getPuzzle = () => {
 };
 
 export default () => {
-  const conditions = 'What is the result of the expression?';
-  flow(conditions, getPuzzle);
+  const manual = 'What is the result of the expression?';
+  flow(manual, getPuzzle);
 };
