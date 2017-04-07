@@ -4,7 +4,7 @@ import { getRandomInt } from '../utils';
 
 
 const getPuzzle = () => {
-  const question = String(getRandomInt(1, 100));
+  const question = getRandomInt(1, 100);
   const answer = question % 2 === 0 ? 'yes' : 'no';
   return cons(question, answer);
 };
