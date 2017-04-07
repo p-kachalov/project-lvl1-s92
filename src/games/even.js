@@ -1,6 +1,7 @@
+import { cons } from 'hexlet-pairs';
 import flow from '../';
 import { getRandomInt } from '../utils';
-import { cons } from '../../node_modules/hexlet-pairs';
+
 
 const getPuzzle = () => {
   const question = String(getRandomInt(1, 100));

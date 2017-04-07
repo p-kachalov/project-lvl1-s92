@@ -1,6 +1,7 @@
+import { cons } from 'hexlet-pairs';
 import flow from '../';
 import { getRandomInt } from '../utils';
-import { cons } from '../../node_modules/hexlet-pairs';
+
 
 const gcd = (num1, num2) => (num2 === 0 ? num1 : gcd(num2, num1 % num2));
 

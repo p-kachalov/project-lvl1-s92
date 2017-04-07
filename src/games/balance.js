@@ -1,6 +1,7 @@
+import { cons } from 'hexlet-pairs';
 import flow from '../';
 import { getRandomInt } from '../utils';
-import { cons } from '../../node_modules/hexlet-pairs';
+
 
 const sortString = str => str.split('').sort().join('');
 

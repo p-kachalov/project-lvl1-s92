@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { car, cdr } from '../node_modules/hexlet-pairs';
+import { car, cdr } from 'hexlet-pairs';
 
 const playRound = (puzzle) => {
   const question = car(puzzle);
