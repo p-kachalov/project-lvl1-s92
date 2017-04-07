@@ -34,7 +34,6 @@ export default (conditions) => {
     return false;
   };
 
-  console.log(`Congratulations, ${username}!`);
   return gameRound;
   // return (q, a) => gameRound(q, a, attemptsCount);
 };
