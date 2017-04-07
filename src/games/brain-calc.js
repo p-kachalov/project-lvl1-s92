@@ -1,5 +1,5 @@
 import flow from '../';
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 import { cons, car, cdr } from '../../node_modules/hexlet-pairs';
 
 const getRandomOperation = (num1, num2) => {

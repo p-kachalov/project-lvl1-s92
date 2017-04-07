@@ -1,5 +1,5 @@
 import flow from '../';
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 
 const gcd = (num1, num2) => (num2 === 0 ? num1 : gcd(num2, num1 % num2));
 

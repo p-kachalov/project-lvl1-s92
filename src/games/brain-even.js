@@ -1,5 +1,5 @@
 import flow from '../';
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 
 const play = (round) => {
   const question = String(getRandomInt(1, 100));

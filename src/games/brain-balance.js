@@ -1,5 +1,5 @@
 import flow from '../';
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 
 const sortString = str => str.split('').sort().join('');
 
