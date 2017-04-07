@@ -22,13 +22,19 @@ const balanceStr = (str) => {
   return (balanceStr(balanceNumbers(sortedStr)));
 };
 
-const puzzle = (play) => {
+const play = (round) => {
   const question = String(getRandomInt(111, 9999));
   const answer = balanceStr(question);
-  return play(question, answer);
+  return round(question, answer);
+};
+
+const iter = (round) => {
+  if (play(round)) return iter(round);
+  return false;
 };
 
 export default () => {
   const conditions = 'Balance the given number.';
-  flow(conditions, puzzle);
+  const round = flow(conditions);
+  iter(round);
 };
