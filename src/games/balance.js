@@ -1,5 +1,6 @@
 import flow from '../';
 import { getRandomInt } from '../utils';
+import { cons } from '../../node_modules/hexlet-pairs';
 
 const sortString = str => str.split('').sort().join('');
 
@@ -22,19 +23,12 @@ const balanceStr = (str) => {
   return (balanceStr(balanceNumbers(sortedStr)));
 };
 
-const play = (round) => {
+const getPuzzle = () => {
   const question = String(getRandomInt(111, 9999));
-  const answer = balanceStr(question);
-  return round(question, answer);
-};
-
-const iter = (round) => {
-  if (play(round)) return iter(round);
-  return false;
+  return cons(question, balanceStr(question));
 };
 
 export default () => {
   const conditions = 'Balance the given number.';
-  const round = flow(conditions);
-  iter(round);
+  flow(conditions, getPuzzle);
 };

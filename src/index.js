@@ -1,39 +1,44 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from '../node_modules/hexlet-pairs';
 
-const showGreeting = (conditions) => {
-  console.log('Welcome to the Brain Games!');
-  if (conditions) console.log(conditions);
+const playRound = (puzzle) => {
+  const question = car(puzzle);
+  const answer = cdr(puzzle);
+  console.log(`Question: ${question}`);
+  const userAnswer = readlineSync.question('Your answer: ');
+  if (userAnswer === answer) {
+    console.log('Correct!');
+    return true;
+  }
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+  return false;
 };
 
-const getUsername = () => {
-  const username = readlineSync.question('\nMay I have your name? ');
-  console.log(`Hello, ${username}!\n`);
-  return username;
-};
-
-export default (conditions) => {
-  showGreeting(conditions);
-  const username = getUsername();
-  if (!conditions) return false;
-  let counter = 3;
-
-  const gameRound = (question, answer) => {
+const playGame = (username, attemptsCount, getPuzzle) => {
+  const iter = (counter) => {
     if (counter === 0) {
       console.log(`Congratulations, ${username}!`);
-      return false;
+      return;
     }
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === answer) {
-      console.log('Correct!');
-      counter -= 1;
-      return true;
+    if (!playRound(getPuzzle())) {
+      console.log(`Let's try again, ${username}!`);
+      return;
     }
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-    console.log(`Let's try again, ${username}!`);
-    return false;
+    iter(counter - 1);
   };
 
-  return gameRound;
-  // return (q, a) => gameRound(q, a, attemptsCount);
+  iter(attemptsCount);
+};
+
+export default (conditions, getPuzzle) => {
+  console.log('Welcome to the Brain Games!');
+  if (conditions) console.log(conditions);
+
+  const username = readlineSync.question('\nMay I have your name? ');
+  console.log(`Hello, ${username}!\n`);
+
+  if (conditions) {
+    const attemptsCount = 3;
+    playGame(username, attemptsCount, getPuzzle);
+  }
 };
